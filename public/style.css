@@ -1,23 +1,25 @@
 body {
 	font-family: Roboto, Helvetica, sans-serif;
 	margin: 0;
-	background-color: #E9E9E9;
+	background-color: #F5F5F5;
 }
 
 a {
 	color: white;
 	text-decoration: none;
+
 }
 
 a:hover {
-	color: #CBCACA;
+	color: black;
 }
 
 nav {
-
+	text-align: center;
 }
 
 .navbar {
+
 	background-color:black;
 	font-size: 25px;
 	line-height: 25px;
@@ -25,12 +27,15 @@ nav {
 
 /* First Header */
 
-.navbar-logo {
-	text-align:center;
-
+.active {
+	border-bottom: 2px solid white;
 }
 
-.navbar-cart {
+.navbar-logo {
+	padding-left: 3%;
+	padding-right:7%;
+	font-weight: bold;
+
 
 }
 
@@ -42,7 +47,7 @@ nav {
 
 .navbar-search {
 
-	padding-left: 125px;
+	padding-left: 9.8%;
 
 }
 
@@ -75,7 +80,6 @@ nav {
 
 .navhead {
 	padding: 0;
-	color: white;
 	background-color: black;
 
 }
@@ -87,20 +91,28 @@ nav {
 
 /* Second Header */
 
-.navlink {
-
+.navitem {
+	padding-bottom: 1px;
 	display: inline-block;
-	padding-left: 25px;
-	padding-right: 20px;
-	padding-bottom: 15px;
+	margin-left: 3%;
 	text-decoration: none;
+	color: white;
 
 }
 
-.navlink.active {
-	border-bottom: 5px solid white;
-}
 
+
+.navlink:hover {
+
+	transition: 0.1s all;
+
+	border: 1px solid white;
+	background-color: white;
+	color: black;
+
+
+
+}
 
 
 
