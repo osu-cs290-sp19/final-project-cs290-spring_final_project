@@ -4,15 +4,20 @@ var exphbs= require('express-handlebars');
 var bodyParser = require('body-parser');
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 9991;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res, next){
 	res.render('productPage');
+});
+
+app.get('*', function(req,res){
+	res.status(404).render('errorPage');
 });
 
 //User needs to fill out:
