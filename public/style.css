@@ -100,11 +100,11 @@ nav {
 	border: none;
 }
 
-#navbar-search-input:hover {
+.navbar-search-input:hover {
 	background-color: #E2E2E2;
 }
 
-#navbar-search-input:focus {
+.navbar-search-input:focus {
 	background-color: #E2E2E2;
 	border: none;
 	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
@@ -130,3 +130,113 @@ nav {
 	cursor: pointer;
 }
 
+/* Sell Pet Modal and Button */
+#sell-pet-modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+}
+
+#modal-backdrop{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.sell-pet-button{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 60px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: #A7CCED;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.sell-pet-header{
+	font-size: 25px;
+	margin-left: 35%;
+}
+
+.pet-questions{
+	display: flex;
+	flex-direction: column;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 5px;
+}
+
+.pet-question{
+	align-content: center;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+#modal-dialog {
+	display: flex;
+	flex-direction: column;
+  max-width: 50%;
+  max-height: 80%;
+  min-height: 55%;
+  margin: auto;
+  margin-top: 80px;
+  background-color: #F5F5F5;
+  border-radius: 15px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.modal-header {
+	display: flex;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.modal-close-button {
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  order: 2;
+  margin-left: 250px;
+  outline: none;
+}
+
+.modal-close-button:active{
+	outline: none;
+}
+
+.sell-pet-submit{
+  background-color: #2fe27a;
+  border: none;
+  color: white;
+  margin-top: 65px;
+  padding: 10px;
+  font-size: 20px;
+  width: 35%;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+}
+
+.sell-pet-submit:active{
+  background-color: #26b763;
+  outline: none;
+}
+
+.hidden{
+	display: none;
+}
