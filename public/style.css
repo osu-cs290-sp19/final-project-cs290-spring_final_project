@@ -67,10 +67,6 @@ nav {
 	flex-direction: row;
 }
 
-.active {
-	border-bottom: 2px solid white;
-}
-
 .search{
 	margin-top: 40px;
 	margin-left: 10px;
@@ -115,25 +111,22 @@ nav {
 }
 
 /* Second Header */
+
+.active{
+  border-bottom: 3px solid white;
+}
+
 .navitem {
 	display: inline-block;
 	margin-left: 3%;
 	text-decoration: none;
 	color: white;
-
 }
 
-.navlink:hover {
-
+.navitem:hover {
 	transition: 0.1s all;
-
-	border: 1px solid white;
-	background-color: white;
-	color: black;
-
-
-
+	background-color: #A7CCED;
+	color: white;
+	cursor: pointer;
 }
-
-
 
