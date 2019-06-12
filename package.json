@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build": "handlebars views/partials/product.handlebars -f public/productTemplate.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   "homepage": "https://github.com/dongrogers/final-project-cs290-spring_final_project#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.1.2"
   }
 }
