@@ -41,8 +41,17 @@ app.get('*', function(req,res){
 app.post('/sellPet', function (req, res){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.species && req.body.url && req.body.petprice){
 		console.log("Pet is now for sale!");
+		var hello = req.body.species;
+		petData[hello].products.push({
+			petname: req.body.petname,
+			petcolor: req.body.petcolor,
+			petprice: req.body.petprice,
+			url: req.body.url
+		})
+		console.log("==== NEW", petData[req.body.species].products);
 		res.status(200).send("Pet succesfully listed!");
 	}
+
 	else{
 		res.status(400).send("Requests must be filled out entirely!");
 	}
