@@ -165,7 +165,6 @@ nav {
 .sell-pet-header{
 	margin-left: 38%;
 	font-size: 25px;
-
 }
 
 .pet-questions{
@@ -174,6 +173,7 @@ nav {
 	margin-left: 30%;
 	margin-right: 30%;
 	margin-top: 5px;
+	padding-bottom: 30px;
 }
 
 .pet-question{
@@ -221,7 +221,7 @@ nav {
   background-color: #2fe27a;
   border: none;
   color: white;
-  margin-top: 65px;
+  margin-bottom: 30px;
   padding: 10px;
   font-size: 20px;
   width: 35%;
