@@ -5,19 +5,19 @@
 				"petname": "Rog",
 				"color": "Black",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			},
 			{
 				"petname": "Dan",
 				"color": "White",
 				"petprice": "$1",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			},
 			{
 				"petname": "Dav",
 				"color": "Red",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			}
 		]
 	},
@@ -28,19 +28,19 @@
 				"petname": "Rag",
 				"color": "Black",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			},
 			{
 				"petname": "Dag",
 				"color": "White",
 				"petprice": "$1",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			},
 			{
 				"petname": "Davag",
 				"color": "Red",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			}
 		]
 	},
@@ -61,7 +61,7 @@
 			{
 				"petname": "Lag",
 				"color": "Red",
-				"price": "$100",
+				"petprice": "$100",
 				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
 			}
 		]
@@ -72,19 +72,19 @@
 				"petname": "Wog",
 				"color": "Black",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			},
 			{
 				"petname": "Blub",
 				"color": "White",
 				"petprice": "$1",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			},
 			{
 				"petname": "Blob",
 				"color": "Red",
 				"petprice": "$100",
-				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			}
 		]
 	}
