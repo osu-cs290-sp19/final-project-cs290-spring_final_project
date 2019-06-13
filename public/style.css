@@ -24,6 +24,7 @@ nav {
 .header{
 	background-color: #ffca3a;
 	padding-top: 10px;
+
 }
 
 .logo{
@@ -41,11 +42,13 @@ nav {
 .navbar {
 	display:flex;
 	flex-direction: row;
+	margin-top: 10px;
 }
 
 .navlist{
 	width:100%;
 	position: relative;
+
 }
 
 .cart{
@@ -119,12 +122,17 @@ nav {
 
 
 .navitem {
+	position:relative;
+	top:16px;
 	display: inline-block;
 	margin-left: 3%;
 	text-decoration: none;
 	color: white;
 	font-size: 25px;
 	font-weight:bold;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+
 }
 
 .navitem::after {
