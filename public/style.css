@@ -27,9 +27,9 @@ nav {
 }
 
 .logo{
-	margin-right: 15px;
-	width: 6%;
-	height: 6%;
+	padding-right: 10px;
+	width: 105px;
+	height: 75px;
 }
 
 .banner{
@@ -46,11 +46,6 @@ nav {
 .navlist{
 	width:100%;
 	position: relative;
-}
-
-.navitem{
-	font-size: 25px;
-	font-weight:bold;
 }
 
 .cart{
@@ -128,14 +123,32 @@ nav {
 	margin-left: 3%;
 	text-decoration: none;
 	color: white;
+	font-size: 25px;
+	font-weight:bold;
 }
 
+.navitem::after {
+	content: '';
+	display: block;
+	width: 0px;
+	height: 3px;
+	background: #000;
+	transition: width .4s;
+}
+
+.navitem:hover::after {
+	width: 100%;
+}
 
 .navitem:hover {
 	transition: 0.1s all;
 	background-color: #A7CCED;
 	color: white;
 	cursor: pointer;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
 }
 
 /* Sell Pet Modal and Button */
