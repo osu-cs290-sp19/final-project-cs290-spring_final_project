@@ -4,11 +4,62 @@ var closeModalButton = document.querySelector('.modal-close-button');
 var modalBackdrop = document.querySelector('#modal-backdrop');
 var sellPetModal = document.querySelector('#sell-pet-modal');
 var sellPetButton = document.querySelector('.sell-pet-submit');
+var newnew = document.querySelector('product');
+
 
 function hideModal(){
 	modalBackdrop.classList.add('hidden');
 	sellPetModal.classList.add('hidden');
 }
+
+var searching = document.getElementById('navbar-search-button');
+searching.onclick = searchBox;
+
+function searchBox(){
+	var num = 0;
+	var searchIn = document.getElementById('navbar-search-input');
+	var petName = document.getElementsByClassName('product-text');
+	var selections = document.getElementsByClassName('product');
+
+/*	if (countHide == 1){
+		for (var k = 0; k < selections.length; k++){
+			selections[k].style.display = 'block';
+		}
+		countHide = 0;
+	}*/
+
+	var searchVal = searchIn.value.toLowerCase();
+	if (searchVal == ""){
+		clearSearch();
+	}
+	else{
+		clearSearch();
+		for(var i = 0; i < selections.length; i++){
+			var values = petName[i].textContent;
+			if (values.toLowerCase().indexOf(searchVal) > -1){
+				num = i;
+		//	console.log(num);
+			}
+		}
+
+		for (var j = 0; j < selections.length; j++){
+			if (j != num){
+				selections[j].style.display = 'none';
+			}
+		}
+	}
+}
+
+
+function clearSearch(){
+//	console.log(values);
+	var selections = document.getElementsByClassName('product');
+	for (var k = 0; k < selections.length; k++){
+		selections[k].style.display = 'block';
+	}
+}
+
+
 
 // === LOAD SINGLE PET PRODUCT === //
 function loadProduct(petObject){
