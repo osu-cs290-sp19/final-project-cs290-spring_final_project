@@ -16,6 +16,19 @@ function loadProduct(petObject){
 	return productHTML;
 }
 
+function clearSection(){
+	var sellPetName = document.querySelector('.sell-pet-name');
+	var sellPetColor = document.querySelector('.sell-pet-color');
+	var sellPetSpecies = document.querySelector('.sell-pet-species');
+	var sellPetPicture = document.querySelector('.sell-pet-picture');
+	var sellPetPrice = document.querySelector('.sell-pet-price');
+	sellPetName.value = "";
+	sellPetColor.value = "";
+	sellPetSpecies.value = "";
+	sellPetPicture.value = "";
+	sellPetPrice.value = "";
+}
+
 // === SELL PET === //
 function handleSellPetClick(){
 	var sellPetName = document.querySelector('.sell-pet-name').value.trim();
@@ -86,10 +99,12 @@ closeModalButton.addEventListener('click', function(){
 })
 
 openModalButton.addEventListener('click', function(){
+	clearSection();
 	modalBackdrop.classList.remove('hidden');
 	sellPetModal.classList.remove('hidden');
 })
 
 sellPetButton.addEventListener('click', function(){
 	hideModal();
+//	console.log("HWEIURHIUWEHRIUEWHLIRu");
 })
