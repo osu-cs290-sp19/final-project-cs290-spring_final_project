@@ -15,9 +15,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 
+//Page shows all pets for sale
 app.get('/', function(req, res, next){
 	res.render('productPage');
 });
+
+
 
 /*app.get('/pets/:animals', function (req, res, next){
 	var animal = req.params.animals.toLowerCase();

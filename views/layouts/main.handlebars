@@ -11,30 +11,7 @@
   </head>
 
   <body>
-    <div class="header">
-      <div class="top-header">
-        <p class="banner">Pet Store</p>
-        <div class="search">
-          <input type="text" class="navbar-search-input" placeholder="Find your animal...">
-          <button class="search-button" type="button" id="navbar-search-button"><i class="fas fa-search fa-2x"></i></button>
-        </div>
-
-        <div class="cart">
-          <button type="button" id="add-to-cart"><i class="fas fa-shopping-cart fa-2x"></i></button>
-        </div>
-
-        </div>
-
-      <nav class="navbar">
-        <ul class="navlist">
-          <li class="navitem active">Home</li>
-          <li class="navitem">Dogs</li>
-          <li class="navitem">Cats</li>
-          <li class="navitem">Fishes</li>
-          <li class="navitem">Hedgehogs</li>
-        </ul>
-      </nav>
-    </div>
+    {{> header}}
 
 		{{{body}}}
 

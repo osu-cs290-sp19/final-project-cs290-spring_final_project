@@ -15,22 +15,6 @@ function hideModal(){
 	sellPetModal.classList.add('hidden');
 }
 
-closeModalButton.addEventListener('click', function(){
-	modalBackdrop.classList.add('hidden');
-	sellPetModal.classList.add('hidden');
-})
-
-openModalButton.addEventListener('click', function(){
-	modalBackdrop.classList.remove('hidden');
-	sellPetModal.classList.remove('hidden');
-})
-
-sellPetButton.addEventListener('click', function(){
-	//Still needs to check if forms are filled before closing
-	modalBackdrop.classList.add('hidden');
-	sellPetModal.classList.add('hidden');
-})
-
 // === LOAD PETS === //
 function loadProduct(petName, url, specie, colors){
 	var petObject = {
@@ -118,3 +102,17 @@ window.addEventListener('DOMContentLoaded', function () {
   modalAcceptButton.addEventListener('click', handleSellPetClick);
 
 });
+
+
+closeModalButton.addEventListener('click', function(){
+	hideModal();
+})
+
+openModalButton.addEventListener('click', function(){
+	modalBackdrop.classList.remove('hidden');
+	sellPetModal.classList.remove('hidden');
+})
+
+sellPetButton.addEventListener('click', function(){
+	hideModal();
+})
