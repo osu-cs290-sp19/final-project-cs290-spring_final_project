@@ -87,16 +87,18 @@ app.get('*', function(req,res){
 //photoURL, petName, petSpecies, petColor, userID
 
 app.post('/sellPet', function (req, res){
-	if(req.body && req.body.petname && req.body.petcolor && req.body.species && req.body.url && req.body.petprice){
+	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
 		console.log("Pet is now for sale!");
-		var specie = req.body.species;
+		var specie = req.body.petspecies;
+		console.log("species: ", specie);
 		petData[specie].products.push({
 			petname: req.body.petname,
 			petcolor: req.body.petcolor,
 			petprice: req.body.petprice,
+			petspecies: req.body.petspecies,
 			url: req.body.url
 		})
-		console.log("==== NEW", petData[req.body.species].products);
+		console.log("==== NEW", petData[req.body.petspecies].products);
 		res.status(200).send("Pet succesfully listed!");
 	}
 

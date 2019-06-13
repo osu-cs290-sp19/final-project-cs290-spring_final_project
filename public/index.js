@@ -95,7 +95,7 @@ function handleSellPetClick(){
 	var petObj = {
 		petname: sellPetName,
 		petcolor: sellPetColor,
-		species: sellPetSpecies,
+		petspecies: sellPetSpecies,
 		url: sellPetPicture,
 		petprice: sellPetPrice
 	};
