@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 9991;
 
-//var animalData = require('./animalData');
+var animalData = require('./animalData');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -14,11 +14,24 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+var thrown = {
+	products: animalData
+}
+
 
 //Page shows all pets for sale
 app.get('/', function(req, res, next){
-	res.render('productPage');
+
+	res.status(200).render('productPage', thrown);
 });
+
+app.get('/pets/:animals',function(req,res,next){
+	res.status(200).render('productPage', thrown);
+
+
+
+});
+
 
 
 
