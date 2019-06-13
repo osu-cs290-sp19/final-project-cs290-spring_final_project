@@ -3,19 +3,19 @@
 		"products": [
 			{
 				"petname": "Rog",
-				"color": "Black",
+				"petcolor": "Black",
 				"petprice": "$100",
 				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			},
 			{
 				"petname": "Dan",
-				"color": "White",
+				"petcolor": "White",
 				"petprice": "$1",
 				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			},
 			{
 				"petname": "Dav",
-				"color": "Red",
+				"petcolor": "Red",
 				"petprice": "$100",
 				"url": "https://apollo-ireland.akamaized.net/v1/files/jjld031bujir3-LB/image;s=644x461;olx-st/_1_.jpg"
 			}
@@ -26,19 +26,19 @@
 		"products": [
 			{
 				"petname": "Rag",
-				"color": "Black",
+				"petcolor": "Black",
 				"petprice": "$100",
 				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			},
 			{
 				"petname": "Dag",
-				"color": "White",
+				"petcolor": "White",
 				"petprice": "$1",
 				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			},
 			{
 				"petname": "Davag",
-				"color": "Red",
+				"petcolor": "Red",
 				"petprice": "$100",
 				"url": "https://www.petmd.com/sites/default/files/small-kitten-walking-towards_127900829_0.jpg"
 			}
@@ -48,19 +48,19 @@
 		"products": [
 			{
 				"petname": "Wag",
-				"color": "Black",
+				"petcolor": "Black",
 				"petprice": "$100",
 				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
 			},
 			{
 				"petname": "Tag",
-				"color": "White",
+				"petcolor": "White",
 				"petprice": "$1",
 				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
 			},
 			{
 				"petname": "Lag",
-				"color": "Red",
+				"petcolor": "Red",
 				"petprice": "$100",
 				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
 			}
@@ -70,19 +70,19 @@
 		"products": [
 			{
 				"petname": "Wog",
-				"color": "Black",
+				"petcolor": "Black",
 				"petprice": "$100",
 				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			},
 			{
 				"petname": "Blub",
-				"color": "White",
+				"petcolor": "White",
 				"petprice": "$1",
 				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			},
 			{
 				"petname": "Blob",
-				"color": "Red",
+				"petcolor": "Red",
 				"petprice": "$100",
 				"url": "https://www.thesprucepets.com/thmb/rn2p765aA0s_XfBv0gBVeSF_olE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/step_6-clownfish-596f72ff0d327a0010fcf738.jpg"
 			}

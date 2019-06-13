@@ -35,14 +35,11 @@ app.get('*', function(req,res){
 	res.status(404).render('errorPage');
 });
 
-
-
 //User needs to fill out:
 //photoURL, petName, petSpecies, petColor, userID
 
-/*
-app.post('/pets/:species/sellPet', function (req, res){
-	if(req.body && req.body.photoURL && req.body.petName && req.body.petSpecies && req.body.petColor && req.body.userID){
+app.post('/sellPet', function (req, res){
+	if(req.body && req.body.petname && req.body.petcolor && req.body.species && req.body.url && req.body.petprice){
 		console.log("Pet is now for sale!");
 		res.status(200).send("Pet succesfully listed!");
 	}
@@ -50,7 +47,7 @@ app.post('/pets/:species/sellPet', function (req, res){
 		res.status(400).send("Requests must be filled out entirely!");
 	}
 });
-*/
+
 app.listen(port, function (err) {
   if (err) {
     throw err;

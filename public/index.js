@@ -5,25 +5,13 @@ var modalBackdrop = document.querySelector('#modal-backdrop');
 var sellPetModal = document.querySelector('#sell-pet-modal');
 var sellPetButton = document.querySelector('.sell-pet-submit');
 
-var sellPetName = document.querySelector('.sell-pet-name');
-var sellPetColor = document.querySelector('.sell-pet-color');
-var sellPetSpecies = document.querySelector('.sell-pet-species');
-var sellPetPicture = document.querySelector('.sell-pet-picture');
-
 function hideModal(){
 	modalBackdrop.classList.add('hidden');
 	sellPetModal.classList.add('hidden');
 }
 
 // === LOAD SINGLE PET PRODUCT === //
-function loadProduct(petName, url, specie, colors){
-	var petObject = {
-		petname: petName,
-		species: specie,
-		color: colors,
-		url: url,
-	};
-
+function loadProduct(petObject){
 	var productHTML = Handlebars.templates.product(petObject);
 	return productHTML;
 }
@@ -34,51 +22,40 @@ function handleSellPetClick(){
 	var sellPetColor = document.querySelector('.sell-pet-color').value;
 	var sellPetSpecies = document.querySelector('.sell-pet-species').value;
 	var sellPetPicture = document.querySelector('.sell-pet-picture').value.trim();
-
-
-	/*
-	var request = XMLHttpRequest();
-	var requestURL = '/';
+	var sellPetPrice = document.querySelector('.sell-pet-price').value.trim();
+////
+	var request = new XMLHttpRequest();
+	var requestURL = '/sellPet';
 	request.open('POST', requestURL);
 
 	var petObj = {
-					petName: sellPetName,
-					petColor: sellPetColor,
-					petSpecies: sellPetSpecies,
-					petURL: sellPetPicture,
+		petname: sellPetName,
+		petcolor: sellPetColor,
+		species: sellPetSpecies,
+		url: sellPetPicture,
+		petprice: sellPetPrice
 	};
 
 	var requestBody = JSON.stringify(petObj);
-	request.setRequestHeader(
-		'Content-Type','application/json'
-	);
+	console.log('=== Request Body', requestBody);
 
 	request.addEventListener('load', function(event){
-		if(event.target.status != 200){
-			var msg = event.target.response
+		if(event.target.status !== 200){
+			var msg = event.target.response;
 			alert("Error storing pet data: " + msg);
-		}
-	*/
-
-		if(!sellPetName || !sellPetPicture){
-			alert("Insert Info!");
 		}
 		else{
 			alert("Good");
-			var sellPetSpecies = document.getElementById("species");
-			var sellPetColor = document.getElementById("color");
-			var species = sellPetSpecies.options[sellPetSpecies.selectedIndex].text;
-			var color = sellPetColor.options[sellPetColor.selectedIndex].text;
-
-			var productHTML = loadProduct(sellPetName, sellPetPicture, species, color);
+			var productHTML = loadProduct(petObj);
 			var productContainer = document.querySelector('.photo-card-container');
 			productContainer.insertAdjacentHTML('beforeend', productHTML);
-			hideModal();
 		}
-	//});
+	});
 
-	// request.send(requestBody);
-}
+	request.setRequestHeader('Content-Type', 'application/json');
+  request.send(requestBody);
+  hideModal();
+};
 
 // === SORTING/NAVIGATION === //
 var navItems = document.querySelectorAll('.navitem');
