@@ -5,6 +5,7 @@ body {
 }
 
 a {
+
 	color: white;
 	text-decoration: none;
 
@@ -267,4 +268,12 @@ nav {
 	width: 100%;
 	max-width: 100%;
 	height: auto;
+}
+
+.product-text{
+	color:black;
+}
+
+.product-price{
+	color:black;
 }
