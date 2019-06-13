@@ -15,7 +15,7 @@ function hideModal(){
 	sellPetModal.classList.add('hidden');
 }
 
-// === LOAD PETS === //
+// === LOAD SINGLE PET PRODUCT === //
 function loadProduct(petName, url, specie, colors){
 	var petObject = {
 		petname: petName,

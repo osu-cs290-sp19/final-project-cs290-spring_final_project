@@ -1,10 +1,70 @@
 <main class="product-page">
   <div class="photo-card-container">
 
-    {{#each products}}
-      {{> productTemplate}}
+    {{#each dogs.products}}
+      {{> product}}
+    {{/each}} 
+
+    {{#each cats.products}}
+      {{> product}}
     {{/each}}
 
+    {{#each fishes.products}}
+      {{> product}}
+    {{/each}}
+
+    {{#each hedgehogs.products}}
+      {{> product}}
+    {{/each}}
+
+    {{#each products}}
+      {{> product}}
+    {{/each}}
+    
   </div>
+
+
+<button class="sell-pet-button" type="button">Sell your pet!</button>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="sell-pet-modal" class="hidden">
+
+  <div id="modal-dialog">
+
+    <div class="modal-header">
+      <button type="button" class="modal-close-button">&times;</button>
+      <p class="sell-pet-header">Want to Sell Your Pet?</p>
+    </div>
+
+    <div class="pet-questions">
+
+      <p class="pet-question">Name of your Pet</p><input type="text" class="sell-pet-name">
+
+      <p class="pet-question">Species of your Pet</p>
+        <select class="sell-pet-species" id="species">
+          <option disabled selected value></option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="fish">Fish</option>
+          <option value="hedgehog">Hedgehog</option>
+        </select>
+
+      <p class="pet-question">Color of your Pet</p>
+        <select class="sell-pet-color" id="color">
+          <option disabled selected value></option>
+          <option value="dog">Black</option>
+          <option value="dog">White</option>
+          <option value="dog">Brown</option>
+          <option value="dog">Mixed</option>
+        </select>
+
+      <p class="pet-question">Picture of your Pet </p><input type="text" class="sell-pet-picture" >
+
+    </div>
+
+    <button type="button" class="sell-pet-submit">Submit your Pet</button>
+
+  </div>
+</div>
 
 </main>

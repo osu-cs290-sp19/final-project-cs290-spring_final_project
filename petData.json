@@ -1,0 +1,91 @@
+{
+	"dogs": {
+		"products": [
+			{
+				"petname": "Rog",
+				"color": "Black",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Dan",
+				"color": "White",
+				"price": "$1",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Dav",
+				"color": "Red",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			}
+		]
+	},
+
+	"cats": {
+		"products": [
+			{
+				"petname": "Rag",
+				"color": "Black",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Dag",
+				"color": "White",
+				"price": "$1",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Davag",
+				"color": "Red",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			}
+		]
+	},
+	"hedgehogs": {
+		"products": [
+			{
+				"petname": "Wag",
+				"color": "Black",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Tag",
+				"color": "White",
+				"price": "$1",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Lag",
+				"color": "Red",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			}
+		]
+	},
+	"fishes": {
+		"products": [
+			{
+				"petname": "Wog",
+				"color": "Black",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Blub",
+				"color": "White",
+				"price": "$1",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			},
+			{
+				"petname": "Blob",
+				"color": "Red",
+				"price": "$100",
+				"url": "https://www.thesprucepets.com/thmb/yLAAAtxUYcgjaJHFjFEXCohq0yE=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-626916125-5b3a4a8046e0fb00379f682d.jpg"
+			}
+		]
+	}
+}
