@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" media="screen">
     <script src="/index.js" charset="utf-8" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js"></script>
-		<script src="/productTemplate.js" defer></script> 
+		<script src="/productTemplate.js" defer></script>
   </head>
 
   <body>
@@ -39,6 +39,7 @@
 		{{{body}}}
 
     <button class="sell-pet-button" type="button">Sell your pet!</button>
+
     <div id="modal-backdrop" class="hidden"></div>
     <div id="sell-pet-modal" class="hidden">
 
@@ -54,7 +55,7 @@
           <p class="pet-question">Name of your Pet</p><input type="text" class="sell-pet-name">
 
           <p class="pet-question">Species of your Pet</p>
-            <select class="sell-pet-species" name="species">
+            <select class="sell-pet-species" id="species">
               <option disabled selected value></option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -63,7 +64,7 @@
             </select>
 
           <p class="pet-question">Color of your Pet</p>
-            <select class="sell-pet-color" name="color">
+            <select class="sell-pet-color" id="color">
               <option disabled selected value></option>
               <option value="dog">Black</option>
               <option value="dog">White</option>

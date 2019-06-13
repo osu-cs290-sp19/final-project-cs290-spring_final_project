@@ -32,9 +32,11 @@ sellPetButton.addEventListener('click', function(){
 })
 
 // === LOAD PETS === //
-function loadProduct(petName, url){
+function loadProduct(petName, url, specie, colors){
 	var petObject = {
 		petname: petName,
+		species: specie,
+		color: colors,
 		url: url,
 	};
 
@@ -49,7 +51,7 @@ function handleSellPetClick(){
 	var sellPetSpecies = document.querySelector('.sell-pet-species').value;
 	var sellPetPicture = document.querySelector('.sell-pet-picture').value.trim();
 
-	
+
 	/*
 	var request = XMLHttpRequest();
 	var requestURL = '/';
@@ -61,13 +63,13 @@ function handleSellPetClick(){
 					petSpecies: sellPetSpecies,
 					petURL: sellPetPicture,
 	};
-	
+
 	var requestBody = JSON.stringify(petObj);
 	request.setRequestHeader(
 		'Content-Type','application/json'
 	);
-	
-	request.addEventListener('load', function(event){		
+
+	request.addEventListener('load', function(event){
 		if(event.target.status != 200){
 			var msg = event.target.response
 			alert("Error storing pet data: " + msg);
@@ -79,13 +81,18 @@ function handleSellPetClick(){
 		}
 		else{
 			alert("Good");
-			var productHTML = loadProduct(sellPetName, sellPetPicture);
+			var sellPetSpecies = document.getElementById("species");
+			var sellPetColor = document.getElementById("color");
+			var species = sellPetSpecies.options[sellPetSpecies.selectedIndex].text;
+			var color = sellPetColor.options[sellPetColor.selectedIndex].text;
+
+			var productHTML = loadProduct(sellPetName, sellPetPicture, species, color);
 			var productContainer = document.querySelector('.photo-card-container');
 			productContainer.insertAdjacentHTML('beforeend', productHTML);
 			hideModal();
 		}
 	//});
-	
+
 	// request.send(requestBody);
 }
 
@@ -108,6 +115,6 @@ navItems.forEach(function(event){
 window.addEventListener('DOMContentLoaded', function () {
 
   var modalAcceptButton = document.querySelector('.sell-pet-submit');
-  modalAcceptButton.addEventListener('click', handleSellPetClick); 
+  modalAcceptButton.addEventListener('click', handleSellPetClick);
 
 });
