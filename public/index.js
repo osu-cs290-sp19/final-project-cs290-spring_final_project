@@ -106,5 +106,4 @@ openModalButton.addEventListener('click', function(){
 
 sellPetButton.addEventListener('click', function(){
 	hideModal();
-//	console.log("HWEIURHIUWEHRIUEWHLIRu");
 })
