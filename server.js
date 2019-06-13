@@ -31,6 +31,17 @@ app.get('/:species', function (req, res, next){
 	}
 });
 
+app.get('/:name', function (req, res, next) {
+	var name = req.params.name;
+	var pet = {
+		petname: 'dog',
+		petprice: '20',
+		url: 'https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg'
+	};
+	console.log(petData[name]);
+	res.status(200).render('singleProductPage', pet);
+})
+
 app.get('*', function(req,res){
 	res.status(404).render('errorPage');
 });
