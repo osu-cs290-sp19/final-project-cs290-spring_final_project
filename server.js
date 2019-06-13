@@ -1,7 +1,9 @@
+var fs = require("fs");
 var path = require('path');
 var express = require('express');
 var exphbs= require('express-handlebars');
 var bodyParser = require('body-parser');
+var content = fs.readFileSync("petData.json");
 
 var app = express();
 var port = process.env.PORT || 9991;
@@ -31,16 +33,51 @@ app.get('/:species', function (req, res, next){
 	}
 });
 
+function findObject(test, name, obj){
+	for (var i=0; i<test.length; i++) {
+		var nameFind = test[i].petname;
+		if (name === nameFind) {
+			var priceFind = test[i].petprice;
+			var urlFind = test[i].url;
+			var colorFind = test[i].color;
+			var speciesFind = test[i].petspecies;
+			obj = {
+				petname: nameFind,
+				petprice: priceFind,
+				color: colorFind,
+				petspecies: speciesFind,
+				url: urlFind
+			};
+		}
+	}
+	return obj;
+};
+
 app.get('/:name', function (req, res, next) {
 	var name = req.params.name;
-	var pet = {
-		petname: 'dog',
-		petprice: '20',
-		url: 'https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg'
-	};
-	console.log(petData[name]);
-	res.status(200).render('singleProductPage', pet);
-})
+
+	var jsonContent = JSON.parse(content);
+	var test1 = jsonContent.dog.products;
+	var test2 = jsonContent.cat.products;
+	var test3 = jsonContent.hedgehog.products;
+	var test4 = jsonContent.fish.products;
+
+	var obj = {
+		petname: '',
+		petprice: '',
+		color: '',
+		petspecies: '',
+		url: ''
+	}
+
+		obj = findObject(test1, name, obj);
+		obj = findObject(test2, name, obj);
+		obj = findObject(test3, name, obj);
+		obj = findObject(test4, name, obj);
+
+	res.status(200).render('singleProductPage', obj);
+
+});
 
 app.get('*', function(req,res){
 	res.status(404).render('errorPage');
