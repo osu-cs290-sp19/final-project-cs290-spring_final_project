@@ -99,10 +99,10 @@ function handleSellPetClick(){
 	request.addEventListener('load', function(event){
 		if(event.target.status !== 200){
 			var msg = event.target.response;
-			alert("Error storing pet data: " + msg);
+//			alert("Error storing pet data: " + msg);
 		}
 		else{
-			alert("Good");
+	//		alert("Good");
 			var productHTML = loadProduct(petObj);
 			var productContainer = document.querySelector('.photo-card-container');
 			productContainer.insertAdjacentHTML('beforeend', productHTML);
