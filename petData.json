@@ -1,0 +1,104 @@
+{
+	"dog": {
+		"products": [
+			{
+				"petname": "Rog",
+				"petcolor": "bBlack",
+				"petprice": "$100",
+				"petspecies": "dog", 
+				"url": "https://www.newdoggy.com/wp-content/uploads/2019/02/Homer-male-pomeranian-puppy-for-sale-2-600x600.jpg"
+
+			},
+			{
+				"petname": "Dan",
+				"petcolor": "white",
+				"petprice": "$1",
+				"petspecies": "dog", 
+				"url": "https://www.georgerossphotography.com/wp-content/uploads/2015/07/untitled-8298-Edit-600x600.jpg"
+			},
+			{
+				"petname": "Dav",
+				"petcolor": "red",
+				"petprice": "$100",
+				"petspecies": "dog", 
+				"url": "https://www.dhresource.com/0x0s/f2-albu-g7-M01-CD-3F-rBVaSVuQuICAPj-9AADHN7aX4wE412.jpg/round-white-puppy-5d-diy-diamond-painting.jpg"
+			}
+		]
+	},
+
+	"cat": {
+		"products": [
+			{
+				"petname": "Rag",
+				"petcolor": "black",
+				"petprice": "$100",
+				"petspecies": "cat",
+				"url": "https://cdn8.littlethings.com/app/uploads/2016/08/orphaned-kitten-foster-eli-6-600x600.jpg"
+			},
+			{
+				"petname": "Dag",
+				"petcolor": "white",
+				"petprice": "$1",
+				"petspecies": "cat",
+				"url": "https://modeltheme.com/mt_numbat/wp-content/uploads/2017/06/persian-cat-600x600.jpg"
+			},
+			{
+				"petname": "Davag",
+				"petcolor": "red",
+				"petprice": "$100",
+				"petspecies": "cat",
+				"url": "https://exotic4home.site/wp-content/uploads/2018/11/WhatsApp-Image-2019-04-06-at-2.11.38-PM-600x600.jpeg"
+			}
+		]
+	},
+	"hedgehog": {
+		"products": [
+			{
+				"petname": "Wag",
+				"petcolor": "black",
+				"petprice": "$100",
+				"petspecies": "hedgehog",
+				"url": "https://www.granitestatehedgehogs.com/wp-content/uploads/Daisy-3-2-600x600.jpg"
+			},
+			{
+				"petname": "Tag",
+				"petcolor": "white",
+				"petprice": "$1",
+				"petspecies": "hedgehog",
+				"url": "https://www.granitestatehedgehogs.com/wp-content/uploads/Cyrus-4-600x600.jpg"
+			},
+			{
+				"petname": "Lag",
+				"petcolor": "red",
+				"petprice": "$100",
+				"petspecies": "hedgehog",
+				"url": "https://www.granitestatehedgehogs.com/wp-content/uploads/Domino-2-1-600x600.jpg"
+			}
+		]
+	},
+	"fish": {
+		"products": [
+			{
+				"petname": "Wog",
+				"petcolor": "black",
+				"petprice": "$100",
+				"petspecies": "fish",
+				"url": "https://www.unusualpetvets.com.au/wp-content/uploads/2016/06/powder-blue-tang-600x600.jpg"
+			},
+			{
+				"petname": "Blub",
+				"petcolor": "white",
+				"petprice": "$1",
+				"petspecies": "fish",
+				"url": "https://www.liveaquaria.com/images/categories/large/lg_72329_Royal_Gramma_Basslet.jpg"
+			},
+			{
+				"petname": "Blob",
+				"petcolor": "red",
+				"petprice": "$100",
+				"petspecies": "fish",
+				"url": "http://s7d5.scene7.com/is/image/PetsUnited/TLF703055_60113"
+			}
+		]
+	}
+}
