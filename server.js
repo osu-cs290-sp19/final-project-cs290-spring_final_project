@@ -9,7 +9,6 @@ var MongoClient = require('mongodb').MongoClient;
 var app = express();
 var port = process.env.PORT || 9991;
 
-var petData = require('./petData');
 var count = 0;
 
 var mongoHost = process.env.MONGO_HOST; //classmongo.engr.oregonstate.edu
@@ -21,6 +20,8 @@ var mongoDBName = process.env.MONGO_DB_NAME; //cs290_dongrog
 var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
 var db = null;
 
+console.log("=== YO ", mongoUrl);
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
@@ -30,7 +31,20 @@ app.use(bodyParser.json());
 
 //Page shows all pets for sale
 app.get('/', function(req, res, next){
-	res.render('productPage', petData);
+	var collection = db.collection('pets');
+	collection.find({}).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
+		}
+		else {
+			console.log("== people:", pets);
+			res.status(200).render('productPage', {
+				products: pets
+			});
+		}
+	});
 });
 
 
