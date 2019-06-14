@@ -53,8 +53,6 @@ function clearSearch(){
 	}
 }
 
-
-
 // === LOAD SINGLE PET PRODUCT === //
 function loadProduct(petObject){
 	var productHTML = Handlebars.templates.product(petObject);
@@ -77,14 +75,29 @@ function clearSection(){
 // === BUY PET === //
 function handleCheckout(){
 	console.log("Starting buy!");
-	var petName = document.querySelector('.checkout-title').value.trim();
-
+	var petsName = document.querySelector('.checkout-title').innerText;
 	var request = new XMLHttpRequest();
-	var requestURL = petName + '/checkoutPage/buyPet';
+	var requestURL = '/checkoutPage/buyPet';
+	var petObj = {
+		petname: petsName
+	};
+
+	var requestBody = JSON.stringify(petObj);
 
 	request.open('POST', requestURL);
 	
-	request.send(petName);
+	request.addEventListener('load', function(event){
+		if(event.target.status !== 200){
+			var msg = event.target.response;
+			alert("Error buying pet: " + msg);
+		}
+		else{
+			alert("Congratulations on your purchase!");
+		};
+	});
+
+	request.setRequestHeader('Content-Type', 'application/json');
+	request.send(requestBody);
 };
 
 // === SELL PET === //

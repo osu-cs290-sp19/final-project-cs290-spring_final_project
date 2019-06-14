@@ -121,18 +121,23 @@ app.post('/sellPet', function (req, res, next){
 	}
 });
 
-app.post('/:petname/checkoutPage/buyPet', function (req, res, next){
-	if(req.body.petName){
-		var petToBuy = req.body.petName;
+app.post('/checkoutPage/buyPet', function (req, res, next){
+	if(req.body.petname){
+		var petToBuy = req.body.petname;
 		var collection = db.collection('pets');
-		collection.deleteOne({petname: petToBuy});
-		res.status(200).render('productPage', {
-			products: collection.find({}).toArray
+
+		collection.find({}).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
+		}
+		else{
+			collection.deleteOne({petname: petToBuy});
+			res.status(200).send("Pet sold");
+		}
 		});
-	}
-	else{
-		res.status(400).send("Could not find pets name?");
-	}
+	};
 });
 
 app.get('*', function(req,res){
