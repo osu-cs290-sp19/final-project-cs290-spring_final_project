@@ -3,7 +3,6 @@ var path = require('path');
 var express = require('express');
 var exphbs= require('express-handlebars');
 var bodyParser = require('body-parser');
-var content = fs.readFileSync("petData.json");
 var MongoClient = require('mongodb').MongoClient;
 
 var app = express();
@@ -76,7 +75,6 @@ app.get('/:species/:name', function (req, res) {
 			});
 		}
 		else{
-			console.log("===:", pets[0].petname);
 			res.status(200).render('singleProductPage', {
 				petname: pets[0].petname,
 				petprice: pets[0].petprice,
@@ -88,25 +86,18 @@ app.get('/:species/:name', function (req, res) {
 	});
 });
 
-app.post('/sellPet', function (req, res){
+app.post('/sellPet', function (req, res, next){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
-		console.log("Pet is now for sale!");
-
-		var specie = req.body.petspecies;
-
-		console.log("species: ", specie);
-		petData[specie].products.push({
+		var collection = db.collection('pets');
+		collection.insertOne({
 			petname: req.body.petname,
 			petcolor: req.body.petcolor,
 			petprice: req.body.petprice,
 			petspecies: req.body.petspecies,
 			url: req.body.url
 		});
-
-		fs.writeFileSync("petData.json",JSON.stringify(petData));
-		res.status(200).send("Pet succesfully listed!");
+		res.status(200).send("Pet is now for sale!");
 	}
-
 	else{
 		res.status(400).send("Requests must be filled out entirely!");
 	}
