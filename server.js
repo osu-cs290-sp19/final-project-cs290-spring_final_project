@@ -19,8 +19,6 @@ var mongoDBName = process.env.MONGO_DB_NAME; //cs290_dongrog
 var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
 var db = null;
 
-console.log("=== YO ", mongoUrl);
-
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
@@ -66,7 +64,6 @@ app.get('/:species', function (req, res, next){
 
 app.get('/:species/:name', function (req, res) {
 	var pet = req.params.name;
-	console.log("=== LOOKING FOR: ", pet);
 	var collection = db.collection('pets');
   collection.find({ petname: pet }).toArray(function (err, pets){
 		if(err){
