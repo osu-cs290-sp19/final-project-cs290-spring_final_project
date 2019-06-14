@@ -42,6 +42,7 @@ app.get('/', function(req, res, next){
 			});
 		}
 		else {
+			collection = db.collection('pets');
 			res.status(200).render('productPage', {
 				products: pets
 			});
