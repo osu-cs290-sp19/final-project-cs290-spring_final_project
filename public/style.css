@@ -306,7 +306,7 @@ nav {
 }
 
 .product-price{
-	margin-left: 40%;
+	text-align: center;
 }
 
 /*Single product page*/
@@ -349,7 +349,6 @@ nav {
   padding: 15px 100px 15px 100px;
   top: 50%;
   cursor: pointer;
-	margin-left:53px;
 }
 
 .add-to-cart:active{
@@ -390,14 +389,11 @@ nav {
   align-items: flex-start;
   width: 50%;
   margin-right: 50px;
-	background-color: #ffca3a;
-	border: 3px solid black;
 
 }
 
 .product-title {
   margin-top: 75px;
-	margin-left: 40%;
   font-size: 42px;
 }
 
@@ -427,38 +423,40 @@ nav {
 
 }
 
+.checkout-body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #checkout-image{
-	width: 250px;
-	height: 250px;
-	margin-top: 2%;
-	margin-left: 40%;
+	width: 400px;
+	height: 400px;
+	margin-top: 10%;
 }
 
 .checkout-title{
-	margin-left: 43%;
+	text-align: center;
 }
 
 .checkout-price{
-	margin-left: 43%;
+	text-align: center;
 }
 
 .checkout-cart{
-	margin-left: 7%;
 	background-color: #2fe27a;
 	border: none;
 	color: white;
 	padding: 15px 100px 15px 100px;
-	top: 50%;
 	cursor: pointer;
+	font-weight: bold;
+	font-size: 25px;
 }
 
 .checkout-description{
-	margin-left: 30%;
+	text-align: center;
 }
 
 .checkout-right{
-	margin-left: 39%;
-	margin-right:41%;
-	background-color: #ffca3a;
-	border: 3px solid black;
+
 }
