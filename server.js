@@ -9,6 +9,7 @@ var app = express();
 var port = process.env.PORT || 9991;
 
 var petData = require('./petData');
+var count = 0;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -23,7 +24,7 @@ app.get('/', function(req, res, next){
 });
 
 
-app.get('/:species', function (req, res, next){
+app.get('/:species', function (req, res,next){
 	var pet = req.params.species;
 	if (petData[pet]){
 		res.status(200).render('productPage', petData[pet]);
@@ -32,6 +33,7 @@ app.get('/:species', function (req, res, next){
 		next();
 	}
 });
+
 
 function findObject(test, name, obj){
 	for (var i=0; i<test.length; i++) {
@@ -48,12 +50,13 @@ function findObject(test, name, obj){
 				petspecies: speciesFind,
 				url: urlFind
 			};
+			count = 1;
 		}
 	}
 	return obj;
 };
 
-app.get('/:name', function (req, res, next) {
+app.get('/:name', function (req, res) {
 	var name = req.params.name;
 
 	var jsonContent = JSON.parse(content);
@@ -75,12 +78,13 @@ app.get('/:name', function (req, res, next) {
 		obj = findObject(test3, name, obj);
 		obj = findObject(test4, name, obj);
 
-	res.status(200).render('singleProductPage', obj);
-
-});
-
-app.get('*', function(req,res){
-	res.status(404).render('errorPage');
+		if (count == 1){
+			res.status(200).render('singleProductPage', obj);
+			count = 0;
+		}
+		else{
+			res.status(404).render('errorPage');
+		}
 });
 
 //User needs to fill out:
@@ -89,7 +93,9 @@ app.get('*', function(req,res){
 app.post('/sellPet', function (req, res){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
 		console.log("Pet is now for sale!");
+
 		var specie = req.body.petspecies;
+
 		console.log("species: ", specie);
 		petData[specie].products.push({
 			petname: req.body.petname,
@@ -97,8 +103,9 @@ app.post('/sellPet', function (req, res){
 			petprice: req.body.petprice,
 			petspecies: req.body.petspecies,
 			url: req.body.url
-		})
-		console.log("==== NEW", petData[req.body.petspecies].products);
+		});
+
+		fs.writeFile("petData.json",JSON.stringify(petData));
 		res.status(200).send("Pet succesfully listed!");
 	}
 
@@ -106,6 +113,11 @@ app.post('/sellPet', function (req, res){
 		res.status(400).send("Requests must be filled out entirely!");
 	}
 });
+
+app.get('*', function(req,res){
+	res.status(404).render('errorPage');
+});
+
 
 app.listen(port, function (err) {
   if (err) {
