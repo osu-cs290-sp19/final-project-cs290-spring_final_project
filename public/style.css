@@ -295,6 +295,10 @@ nav {
 	opacity: 0.5;
 }
 
+.product-meta {
+	color:white;
+}
+
 .product-image{
 	left: 0;
 	top: 0;
@@ -305,12 +309,12 @@ nav {
 
 .product-text{
 	text-align: center;
-	color:white;
+	
 }
 
 .product-price{
 	text-align: center;
-	color:white;
+	
 }
 
 /*Single product page*/
