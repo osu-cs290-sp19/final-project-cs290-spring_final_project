@@ -134,7 +134,7 @@ app.post('/checkoutPage/buyPet', function (req, res, next){
 		}
 		else{
 			collection.deleteOne({petname: petToBuy});
-			res.status(200).send("Pet sold");
+			res.status(200).redirect("/");
 		}
 		});
 	};
