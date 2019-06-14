@@ -462,5 +462,6 @@ nav {
 }
 
 .checkout-right{
-
+	align-content:center;
+	text-align:center;
 }

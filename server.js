@@ -67,6 +67,31 @@ app.get('/:name/checkoutPage', function(req, res, next){
 	});
 });
 
+app.get('/:name/checkoutPage/confPage', function(req, res, next){
+
+	var petFind = req.params.name;
+	var collection = db.collection('pets');
+	collection.find({ petname: petFind }).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
+		}
+		else if(pets.length < 1){
+			next();
+		}
+		else{
+			res.status(200).render('confPage', {
+				petname: pets[0].petname,
+				petprice: pets[0].petprice,
+				petcolor: pets[0].petcolor,
+				petspecies: pets[0].petspecies,
+				url: pets[0].url
+			});
+		}
+	});
+});
+
 app.get('/:species', function (req, res, next){
 	var pet = req.params.species.toLowerCase();
 	var collection = db.collection('pets');
@@ -114,7 +139,6 @@ app.get('/:species/:name', function (req, res, next) {
 	});
 });
 
-
 app.post('/sellPet', function (req, res, next){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
 		var collection = db.collection('pets');
@@ -145,7 +169,7 @@ app.post('/checkoutPage/buyPet', function (req, res, next){
 		}
 		else{
 			collection.deleteOne({petname: petToBuy});
-			res.status(200).send("Pet sold");
+			res.status(200).send("Good");
 		}
 		});
 	};
