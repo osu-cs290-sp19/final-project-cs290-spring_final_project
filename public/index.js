@@ -32,15 +32,8 @@ function searchBox(){
 			var values = petName[i].textContent;
 			if (values.toLowerCase().indexOf(searchVal) == -1){
 				selections[i].style.display = 'none';
-				//num = i;
 			}
 		}
-
-		/*for (var j = 0; j < selections.length; j++){
-			if (j != num){
-				selections[j].style.display = 'none';
-			}
-		}*/
 	}
 }
 
