@@ -48,14 +48,22 @@ app.get('/', function(req, res, next){
 });
 
 
-app.get('/:species', function (req, res,next){
-	var pet = req.params.species;
-	if (petData[pet]){
-		res.status(200).render('productPage', petData[pet]);
-	}
-	else{
-		next();
-	}
+app.get('/:species', function (req, res, next){
+	var pet = req.params.species.toLowerCase();
+	var collection = db.collection('pets');
+  collection.find({ petspecies: pet }).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
+		}
+		else{
+			console.log(pets);
+			res.status(200).render('productPage', {
+				products: pets
+			});
+		}
+	});
 });
 
 
