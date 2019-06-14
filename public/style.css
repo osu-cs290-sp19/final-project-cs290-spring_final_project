@@ -430,17 +430,24 @@ nav {
 }
 
 .checkout-title{
-	margin-left: 47%;
+	margin-left: 45%;
 }
 
 .checkout-price{
-	margin-left: 47%;
+	margin-left: 45%;
 }
 
 .add-to-cart{
-	margin-left: 40%;
+	margin-left: 7%;
 }
 
 .checkout-description{
-	margin-left: 45%;
+	margin-left: 34%;
+}
+
+.checkout-right{
+	margin-left: 39%;
+	margin-right:41%;
+	background-color: #ffca3a;
+	border: 3px solid black;
 }
