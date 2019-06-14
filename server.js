@@ -43,8 +43,25 @@ app.get('/', function(req, res, next){
 	});
 });
 
-app.get('/:petname/checkoutPage', function(req, res){
-	res.status(200).render('checkoutPage');
+app.get('/:name/checkoutPage', function(req, res){
+	var petFind = req.params.name;
+	var collection = db.collection('pets');
+	collection.find({ petname: petFind }).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
+		}
+		else{
+			res.status(200).render('checkoutPage', {
+				petname: pets[0].petname,
+				petprice: pets[0].petprice,
+				petcolor: pets[0].petcolor,
+				petspecies: pets[0].petspecies,
+				url: pets[0].url
+			});
+		}
+	});
 });
 
 app.get('/:species', function (req, res, next){

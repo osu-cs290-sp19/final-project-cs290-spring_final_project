@@ -76,6 +76,7 @@ function clearSection(){
 
 // === BUY PET === //
 function handleCheckout(){
+	console.log("Starting buy!");
 	var petName = document.querySelector('.checkout-title').value.trim();
 
 	var request = new XMLHttpRequest();
