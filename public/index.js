@@ -14,6 +14,7 @@ function hideModal(){
 }
 
 var searching = document.getElementById('navbar-search-button');
+searching.onkeyup = searchBox;
 searching.onclick = searchBox;
 
 function searchBox(){

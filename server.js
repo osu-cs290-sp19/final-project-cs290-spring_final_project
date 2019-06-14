@@ -78,7 +78,7 @@ app.get('/:name/checkoutPage/confPage', function(req, res, next){
 			});
 		}
 		else if(pets.length < 1){
-			next();
+			res.status(200).redirect('/');
 		}
 		else{
 			res.status(200).render('confPage', {
