@@ -25,6 +25,12 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+var availableSpecies = [
+	'dog',
+	'cat',
+	'fish',
+	'hedgehog'
+];
 
 //Page shows all pets for sale
 app.get('/', function(req, res, next){
@@ -42,6 +48,15 @@ app.get('/', function(req, res, next){
 		}
 	});
 });
+
+function checking(species){
+	for (var i = 0; i < availableSpecies.length; i++){
+		if(availableSpecies[i] == species){
+			count = 1;
+		}
+
+	}
+}
 
 app.get('/:name/checkoutPage', function(req, res){
 	var petFind = req.params.name;
@@ -67,16 +82,21 @@ app.get('/:name/checkoutPage', function(req, res){
 app.get('/:species', function (req, res, next){
 	var pet = req.params.species.toLowerCase();
 	var collection = db.collection('pets');
+	checking(pet);
   collection.find({ petspecies: pet }).toArray(function (err, pets){
 		if(err){
 			res.status(500).send({
 				error: "Error fetching pet data from database!"
 			});
 		}
-		else{
+		else if (count == 1){
 			res.status(200).render('productPage', {
 				products: pets
 			});
+			count = 0;
+		}
+		else{
+			res.status(404).render('errorPage');
 		}
 	});
 });
@@ -84,6 +104,9 @@ app.get('/:species', function (req, res, next){
 
 app.get('/:species/:name', function (req, res) {
 	var pet = req.params.name;
+	var species = req.params.species.toLowerCase();
+//	console.log(species);
+	checking(species);
 	var collection = db.collection('pets');
   collection.find({ petname: pet }).toArray(function (err, pets){
 		if(err){
@@ -91,7 +114,8 @@ app.get('/:species/:name', function (req, res) {
 				error: "Error fetching pet data from database!"
 			});
 		}
-		else{
+
+		else if (count == 1){
 			res.status(200).render('singleProductPage', {
 				petname: pets[0].petname,
 				petprice: pets[0].petprice,
@@ -99,6 +123,10 @@ app.get('/:species/:name', function (req, res) {
 				petspecies: pets[0].petspecies,
 				url: pets[0].url
 			});
+			count = 0;
+		}
+		else{
+			res.status(404).render('errorPage');
 		}
 	});
 });
