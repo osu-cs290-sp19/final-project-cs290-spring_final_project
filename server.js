@@ -23,36 +23,6 @@ app.get('/', function(req, res, next){
 	res.render('productPage', petData);
 });
 
-function callback(){
-	console.log("test");
-}
-
-
-app.post('/sellPet', function (req, res){
-	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
-		console.log("Pet is now for sale!");
-
-		var specie = req.body.petspecies;
-
-		console.log("species: ", specie);
-		petData[specie].products.push({
-			petname: req.body.petname,
-			petcolor: req.body.petcolor,
-			petprice: req.body.petprice,
-			petspecies: req.body.petspecies,
-			url: req.body.url
-		});
-
-		fs.writeFile("petData.json",JSON.stringify(petData),callback);
-		res.status(200).send("Pet succesfully listed!");
-	}
-
-	else{
-		res.status(400).send("Requests must be filled out entirely!");
-	}
-});
-
-
 
 app.get('/:species', function (req, res,next){
 	var pet = req.params.species;
@@ -88,7 +58,7 @@ function findObject(test, name, obj){
 
 app.get('/:name', function (req, res) {
 	var name = req.params.name;
-
+	content = fs.readFileSync("petData.json");
 	var jsonContent = JSON.parse(content);
 	var test1 = jsonContent.dog.products;
 	var test2 = jsonContent.cat.products;
@@ -108,14 +78,19 @@ app.get('/:name', function (req, res) {
 		obj = findObject(test3, name, obj);
 		obj = findObject(test4, name, obj);
 
+		if (count == 1){
 			res.status(200).render('singleProductPage', obj);
-
+			count = 0;
+		}
+		else{
+			res.status(404).render('errorPage');
+		}
 });
 
 //User needs to fill out:
 //photoURL, petName, petSpecies, petColor, userID
 
-/*app.post('/sellPet', function (req, res){
+app.post('/sellPet', function (req, res){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
 		console.log("Pet is now for sale!");
 
@@ -130,14 +105,14 @@ app.get('/:name', function (req, res) {
 			url: req.body.url
 		});
 
-		fs.writeFile("petData.json",JSON.stringify(petData));
+		fs.writeFileSync("petData.json",JSON.stringify(petData));
 		res.status(200).send("Pet succesfully listed!");
 	}
 
 	else{
 		res.status(400).send("Requests must be filled out entirely!");
 	}
-});*/
+});
 
 app.get('*', function(req,res){
 	res.status(404).render('errorPage');
