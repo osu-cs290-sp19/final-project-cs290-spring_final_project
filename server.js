@@ -66,7 +66,6 @@ app.get('/:species', function (req, res, next){
 
 
 app.get('/:species/:name', function (req, res) {
-	console.log("Entered!");
 	var pet = req.params.name;
 	console.log("=== LOOKING FOR: ", pet);
 	var collection = db.collection('pets');
@@ -77,16 +76,17 @@ app.get('/:species/:name', function (req, res) {
 			});
 		}
 		else{
-			console.log(pets);
-			res.status(200).render('productPage', {
-				products: pets
+			console.log("===:", pets[0].petname);
+			res.status(200).render('singleProductPage', {
+				petname: pets[0].petname,
+				petprice: pets[0].petprice,
+				petcolor: pets[0].petcolor,
+				petspecies: pets[0].petspecies,
+				url: pets[0].url
 			});
 		}
 	});
 });
-
-//User needs to fill out:
-//photoURL, petName, petSpecies, petColor, userID
 
 app.post('/sellPet', function (req, res){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
