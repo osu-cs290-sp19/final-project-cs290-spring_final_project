@@ -39,6 +39,10 @@ nav {
 	font-weight:bold;
 }
 
+.banner:hover {
+	color:black;
+}
+
 .navbar {
 	display:flex;
 	flex-direction: row;
@@ -49,21 +53,6 @@ nav {
 	width:100%;
 	position: relative;
 
-}
-
-.cart{
-	position: absolute;
-	right: 0;
-	margin-right: 30px;
-	margin-top: 45px;
-}
-
-#add-to-cart{
-	color: white;
-	border: none;
-	background: none;
-	cursor: pointer;
-	font-size: 15px;
 }
 
 /* Top Header */
@@ -100,6 +89,10 @@ nav {
 	background: none;
 	cursor: pointer;
 
+}
+
+#navbar-search-button:hover {
+	color:black;
 }
 
 #navbar-search-input {
@@ -343,6 +336,12 @@ nav {
 	max-height: 600px;
 }
 
+.cart{
+	position: absolute;
+	right: 0;
+	margin-right: 30px;
+	margin-top: 45px;
+}
 
 .add-to-cart{
   background-color: #2fe27a;
@@ -355,6 +354,18 @@ nav {
 
 .add-to-cart:active{
   background-color: #26b763;
+}
+
+#add-to-cart{
+	color: white;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+#add-to-cart:hover {
+	color: black;
 }
 
 .product-header {

@@ -41,12 +41,12 @@ function findObject(test, name, obj){
 		if (name === nameFind) {
 			var priceFind = test[i].petprice;
 			var urlFind = test[i].url;
-			var colorFind = test[i].color;
+			var colorFind = test[i].petcolor;
 			var speciesFind = test[i].petspecies;
 			obj = {
 				petname: nameFind,
 				petprice: priceFind,
-				color: colorFind,
+				petcolor: colorFind,
 				petspecies: speciesFind,
 				url: urlFind
 			};
@@ -68,7 +68,7 @@ app.get('/:name', function (req, res) {
 	var obj = {
 		petname: '',
 		petprice: '',
-		color: '',
+		petcolor: '',
 		petspecies: '',
 		url: ''
 	}
@@ -105,7 +105,7 @@ app.post('/sellPet', function (req, res){
 			url: req.body.url
 		});
 
-		fs.writeFile("petData.json",JSON.stringify(petData));
+		fs.writeFileSync("petData.json",JSON.stringify(petData));
 		res.status(200).send("Pet succesfully listed!");
 	}
 
