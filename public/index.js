@@ -5,7 +5,7 @@ var modalBackdrop = document.querySelector('#modal-backdrop');
 var sellPetModal = document.querySelector('#sell-pet-modal');
 var sellPetButton = document.querySelector('.sell-pet-submit');
 var newnew = document.querySelector('product');
-var checkoutButton = document.querySelector('.checkout-cart');
+var checkButton = document.querySelector('.checkout-cart');
 
 
 function hideModal(){
@@ -21,7 +21,6 @@ function searchBox(){
 	var searchIn = document.getElementById('navbar-search-input');
 	var petName = document.getElementsByClassName('product-text');
 	var selections = document.getElementsByClassName('product');
-
 	var searchVal = searchIn.value.toLowerCase();
 	if (searchVal == ""){
 		clearSearch();
@@ -157,20 +156,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
 });
 
-checkoutButton.addEventListener('click',	 function(){
-	handleCheckout();
-});
-
-
-closeModalButton.addEventListener('click', function(){
-	hideModal();
-})
+if(checkButton){
+	checkButton.addEventListener('click', function(){
+		handleCheckout();
+	})
+}
 
 openModalButton.addEventListener('click', function(){
 	clearSection();
 	modalBackdrop.classList.remove('hidden');
 	sellPetModal.classList.remove('hidden');
 })
+
+closeModalButton.addEventListener('click', function(){
+	hideModal();
+})
+
 
 sellPetButton.addEventListener('click', function(){
 	hideModal();
