@@ -5,7 +5,7 @@ var modalBackdrop = document.querySelector('#modal-backdrop');
 var sellPetModal = document.querySelector('#sell-pet-modal');
 var sellPetButton = document.querySelector('.sell-pet-submit');
 var newnew = document.querySelector('product');
-var checkoutButton = document.querySelector('.add-to-cart');
+var checkoutButton = document.querySelector('.checkout-cart');
 
 
 function hideModal(){
@@ -85,7 +85,7 @@ function handleCheckout(){
 	var requestBody = JSON.stringify(petObj);
 
 	request.open('POST', requestURL);
-	
+
 	request.addEventListener('load', function(event){
 		if(event.target.status !== 200){
 			var msg = event.target.response;
