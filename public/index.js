@@ -21,13 +21,6 @@ function searchBox(){
 	var petName = document.getElementsByClassName('product-text');
 	var selections = document.getElementsByClassName('product');
 
-/*	if (countHide == 1){
-		for (var k = 0; k < selections.length; k++){
-			selections[k].style.display = 'block';
-		}
-		countHide = 0;
-	}*/
-
 	var searchVal = searchIn.value.toLowerCase();
 	if (searchVal == ""){
 		clearSearch();
@@ -36,17 +29,17 @@ function searchBox(){
 		clearSearch();
 		for(var i = 0; i < selections.length; i++){
 			var values = petName[i].textContent;
-			if (values.toLowerCase().indexOf(searchVal) > -1){
-				num = i;
-		//	console.log(num);
+			if (values.toLowerCase().indexOf(searchVal) == -1){
+				selections[i].style.display = 'none';
+				//num = i;
 			}
 		}
 
-		for (var j = 0; j < selections.length; j++){
+		/*for (var j = 0; j < selections.length; j++){
 			if (j != num){
 				selections[j].style.display = 'none';
 			}
-		}
+		}*/
 	}
 }
 
