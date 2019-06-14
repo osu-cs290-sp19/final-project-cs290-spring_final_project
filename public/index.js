@@ -113,15 +113,14 @@ function handleSellPetClick(){
 	};
 
 	var requestBody = JSON.stringify(petObj);
-	console.log('=== Request Body', requestBody);
 
 	request.addEventListener('load', function(event){
 		if(event.target.status !== 200){
 			var msg = event.target.response;
-//			alert("Error storing pet data: " + msg);
+			alert("Error storing pet data: " + msg);
 		}
 		else{
-	//		alert("Good");
+			alert("Your pet is now for sale!");
 			var productHTML = loadProduct(petObj);
 			var productContainer = document.querySelector('.photo-card-container');
 			productContainer.insertAdjacentHTML('beforeend', productHTML);
