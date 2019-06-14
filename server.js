@@ -43,6 +43,9 @@ app.get('/', function(req, res, next){
 	});
 });
 
+app.get('/:petname/checkoutPage', function(req, res){
+	res.status(200).render('checkoutPage');
+});
 
 app.get('/:species', function (req, res, next){
 	var pet = req.params.species.toLowerCase();
@@ -83,6 +86,7 @@ app.get('/:species/:name', function (req, res) {
 	});
 });
 
+
 app.post('/sellPet', function (req, res, next){
 	if(req.body && req.body.petname && req.body.petcolor && req.body.petspecies && req.body.url && req.body.petprice){
 		var collection = db.collection('pets');
@@ -97,6 +101,20 @@ app.post('/sellPet', function (req, res, next){
 	}
 	else{
 		res.status(400).send("Requests must be filled out entirely!");
+	}
+});
+
+app.post('/:petname/checkoutPage/buyPet', function (req, res, next){
+	if(req.body.petName){
+		var petToBuy = req.body.petName;
+		var collection = db.collection('pets');
+		collection.deleteOne({petname: petToBuy});
+		res.status(200).render('productPage', {
+			products: collection.find({}).toArray
+		});
+	}
+	else{
+		res.status(400).send("Could not find pets name?");
 	}
 });
 

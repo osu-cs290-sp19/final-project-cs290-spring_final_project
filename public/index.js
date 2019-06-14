@@ -5,6 +5,7 @@ var modalBackdrop = document.querySelector('#modal-backdrop');
 var sellPetModal = document.querySelector('#sell-pet-modal');
 var sellPetButton = document.querySelector('.sell-pet-submit');
 var newnew = document.querySelector('product');
+var checkoutButton = document.querySelector('.add-to-cart');
 
 
 function hideModal(){
@@ -73,6 +74,18 @@ function clearSection(){
 	sellPetPrice.value = "";
 }
 
+// === BUY PET === //
+function handleCheckout(){
+	var petName = document.querySelector('.checkout-title').value.trim();
+
+	var request = new XMLHttpRequest();
+	var requestURL = petName + '/checkoutPage/buyPet';
+
+	request.open('POST', requestURL);
+	
+	request.send(petName);
+};
+
 // === SELL PET === //
 function handleSellPetClick(){
 	var sellPetName = document.querySelector('.sell-pet-name').value.trim();
@@ -135,6 +148,10 @@ window.addEventListener('DOMContentLoaded', function () {
   var modalAcceptButton = document.querySelector('.sell-pet-submit');
   modalAcceptButton.addEventListener('click', handleSellPetClick);
 
+});
+
+checkoutButton.addEventListener('click',	 function(){
+	handleCheckout();
 });
 
 
