@@ -39,7 +39,6 @@ app.get('/', function(req, res, next){
 			});
 		}
 		else {
-			console.log("== people:", pets);
 			res.status(200).render('productPage', {
 				products: pets
 			});
@@ -58,7 +57,6 @@ app.get('/:species', function (req, res, next){
 			});
 		}
 		else{
-			console.log(pets);
 			res.status(200).render('productPage', {
 				products: pets
 			});
@@ -67,56 +65,24 @@ app.get('/:species', function (req, res, next){
 });
 
 
-function findObject(test, name, obj){
-	for (var i=0; i<test.length; i++) {
-		var nameFind = test[i].petname;
-		if (name === nameFind) {
-			var priceFind = test[i].petprice;
-			var urlFind = test[i].url;
-			var colorFind = test[i].petcolor;
-			var speciesFind = test[i].petspecies;
-			obj = {
-				petname: nameFind,
-				petprice: priceFind,
-				petcolor: colorFind,
-				petspecies: speciesFind,
-				url: urlFind
-			};
-			count = 1;
-		}
-	}
-	return obj;
-};
-
-app.get('/:name', function (req, res) {
-	var name = req.params.name;
-	content = fs.readFileSync("petData.json");
-	var jsonContent = JSON.parse(content);
-	var test1 = jsonContent.dog.products;
-	var test2 = jsonContent.cat.products;
-	var test3 = jsonContent.hedgehog.products;
-	var test4 = jsonContent.fish.products;
-
-	var obj = {
-		petname: '',
-		petprice: '',
-		petcolor: '',
-		petspecies: '',
-		url: ''
-	}
-
-		obj = findObject(test1, name, obj);
-		obj = findObject(test2, name, obj);
-		obj = findObject(test3, name, obj);
-		obj = findObject(test4, name, obj);
-
-		if (count == 1){
-			res.status(200).render('singleProductPage', obj);
-			count = 0;
+app.get('/:species/:name', function (req, res) {
+	console.log("Entered!");
+	var pet = req.params.name;
+	console.log("=== LOOKING FOR: ", pet);
+	var collection = db.collection('pets');
+  collection.find({ petname: pet }).toArray(function (err, pets){
+		if(err){
+			res.status(500).send({
+				error: "Error fetching pet data from database!"
+			});
 		}
 		else{
-			res.status(404).render('errorPage');
+			console.log(pets);
+			res.status(200).render('productPage', {
+				products: pets
+			});
 		}
+	});
 });
 
 //User needs to fill out:
