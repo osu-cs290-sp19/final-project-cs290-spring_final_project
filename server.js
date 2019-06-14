@@ -105,7 +105,7 @@ app.post('/sellPet', function (req, res){
 			url: req.body.url
 		});
 
-		fs.writeFile("petData.json",JSON.stringify(petData));
+		fs.writeFileSync("petData.json",JSON.stringify(petData));
 		res.status(200).send("Pet succesfully listed!");
 	}
 
